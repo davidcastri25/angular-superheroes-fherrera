@@ -9,7 +9,7 @@
     </mat-card-header>
 
     <!-- Imagen -->
-    <img mat-card-image src="../../../../assets/heroes/{{ heroe.id }}.jpg">
+    <img mat-card-image [src]="heroe | imagen">
 
     <!-- Cuerpo de la tarjeta -->
     <mat-card-content>
@@ -24,11 +24,15 @@
     <!-- Botones -->
     <mat-card-actions>
         <!-- Leer más -->
-        <button mat-raised-button color="primary">
+        <button mat-raised-button 
+            color="primary"
+            [routerLink]="['/heroes', heroe.id]">
             Leer más...
         </button>
         <!-- Editar -->
-        <button mat-raised-button color="primary">
+        <button mat-raised-button 
+            color="primary"
+            [routerLink]="['/heroes/editar', heroe.id]">
             Editar
         </button>
     </mat-card-actions>
