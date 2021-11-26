@@ -39,6 +39,11 @@ export class AgregarComponent implements OnInit {
     private router: Router ) { }
 
   ngOnInit(): void {
+
+    if(!this.router.url.includes('editar')) {
+      return;
+    }
+
     //Si hay id, necesito editar, si no hay id (undefined), necesito crear
     this.activatedRoute.params
       .pipe(
